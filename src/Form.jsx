@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
-
+import calculateAmount from "./CalculateAmount";
 function Form() {
+  
+
   return (
     <>
-      <form>
+    
+      <form onSubmit = {(e) =>{e.preventDefault();calculateAmount()}}>
         <input id="values" name="values" type="text" />
-        <select id="operation" name="operation">
+        <select id="operation" value = {inputValue} name="operation" onChange={setInputValue}>
           <option value=""></option>
           <option value="sum">sum</option>
           <option value="average">average</option>
